@@ -10,8 +10,8 @@ jobs:
         - name: "Check out code"
             shell: bash
             env:
-                SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
+                SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
             run: |
                 npm install -g bats
                 bats -v
-                echo "$SUPER_SECRET"
+                echo "$SECRET_TOKEN"
