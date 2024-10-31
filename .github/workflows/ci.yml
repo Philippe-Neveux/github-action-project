@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: "Check out code"
-            shell: bash
-            env:
-                SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
-            run: |
-                npm install -g bats
-                bats -v
-                echo "$SECRET_TOKEN"
+          shell: bash
+          env:
+            SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          run: |
+            npm install -g bats
+            bats -v
+            echo "$SECRET_TOKEN"
