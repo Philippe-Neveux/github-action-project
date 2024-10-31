@@ -6,6 +6,7 @@ on:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    container: ghcr.io/philippe-neveux/data-sciences:latest
     steps:
         - name: "Check out code"
           shell: bash
@@ -13,3 +14,5 @@ jobs:
             SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
           run: |
             echo "$SECRET_TOKEN"
+            poetry
+            which python
