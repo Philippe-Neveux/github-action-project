@@ -6,7 +6,11 @@ on:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
-    container: ghcr.io/philippe-neveux/data-sciences:latest
+    container:
+      image: ghcr.io/philippe-neveux/data-sciences:latest
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
     steps:
         - name: "Check out code"
           shell: bash
